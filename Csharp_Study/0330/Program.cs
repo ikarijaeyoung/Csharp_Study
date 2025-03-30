@@ -13,24 +13,26 @@
             public int userInput;
             private Random ranNum = new Random();
 
-            public void SetWinNum()
-            {
-                winNum = ranNum.Next(1, 12);
-            }
+            // public void SetWinNum()
+            // {
+            //     winNum = ranNum.Next(1, 12);
+            // }
 
             public void TryLottery()
             {
-                Console.Write("1 ~ 12 숫자를 입력해 주세요 : ");
 
                 while (true)
                 {
+                    Console.Write("1 ~ 12 숫자를 입력해 주세요 : ");
                     userInput = int.Parse(Console.ReadLine());
+                    winNum = ranNum.Next(1, 12);
+
                     if (userInput == winNum)
                     {
                         Console.WriteLine(" 당첨! ");
                         break;
                     }
-                    else { Console.WriteLine("다시 입력해주세요."); }
+                    else { Console.WriteLine($"다시 입력해주세요. 당첨 번호는 {winNum}이였습니다."); }
                 }
             }
 
@@ -45,8 +47,8 @@
 
             Lottery lottery = new();
 
-            lottery.SetWinNum();
-            lottery.TryLottery();
+            // lottery.SetWinNum();
+            lottery.TryLottery(); // 당첨 번호를 매번 재설정
 
         }
     }
