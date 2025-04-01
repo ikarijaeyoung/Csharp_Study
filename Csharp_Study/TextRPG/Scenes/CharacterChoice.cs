@@ -22,46 +22,46 @@
             {
                 case ConsoleKey.D1:
                     Console.WriteLine("검사를 선택하셨습니다.");
+                    Game.Player.Str = 10; // 선택에 따라 부가 스텟 재조정
+                    Game.Player.Hp = 150;
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("궁수를 선택하셨습니다.");
+                    Game.Player.Str = 4;
+                    Game.Player.Hp = 90;
                     break;
                 case ConsoleKey.D3:
                     Console.WriteLine("마법사를 선택하셨습니다.");
+                    Game.Player.Intelligence = 10;
+                    Game.Player.Hp = 80;
                     break;
                 case ConsoleKey.D4:
                     if (thiefCharacterOpen == true)
                     {
                         Console.WriteLine("도둑을 선택하셨습니다.");
+                        Game.Player.Luck = 11;
+                        Game.Player.Hp = 100;
+                        Game.Player.Gold = 200;
                     }
-                    break;
+                    else { Console.WriteLine("잘못된 입력입니다. 다시 입력해 주세요."); }
+                    return;
                 default:
                     Console.WriteLine("잘못된 입력입니다. 다시 입력해 주세요.");
-                    break;
+                    return;
             }
         }
         public override void Wait()
         {
-
+            Console.ReadKey();
         }
         public override void Next()
         {
             switch (input)
             {
-                case ConsoleKey.D1:
-                    Game.ChangeScene("");
-                    break;
-                case ConsoleKey.D2:
-                    Game.ChangeScene("");
-                    break;
-                case ConsoleKey.D3:
-                    Game.ChangeScene("");
-                    break;
-                case ConsoleKey.D4:
-                    Game.ChangeScene("");
-                    break;
                 default:
-                    Console.WriteLine("잘못된 입력입니다. 다시 입력해 주세요.");
+                    {
+                        Game.ChangeScene("SnailsHill");
+                    }
                     break;
             }
         }
