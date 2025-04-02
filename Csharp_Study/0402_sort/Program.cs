@@ -2,10 +2,18 @@
 {
     internal class Program
     {
+        public static void Swap(int left, int right)
+        {
+            int temp = left;
+            left = right;
+            right = temp;
+        }
+
         static void Main(string[] args)
         {
 
         }
+
         선택정렬
             작은수를 찾아서
             기준을 설정
