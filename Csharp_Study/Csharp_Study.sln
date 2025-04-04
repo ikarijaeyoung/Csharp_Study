@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextRPG", "TextRPG\TextRPG.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0401_LevelTeset02", "0401_LevelTeset02\0401_LevelTeset02.csproj", "{9B78DD0F-5011-4728-96CE-38FE2428DF55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0402_sort", "0402_sort\0402_sort.csproj", "{A36979E6-B537-465C-B304-07AFCCB52945}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{9B78DD0F-5011-4728-96CE-38FE2428DF55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B78DD0F-5011-4728-96CE-38FE2428DF55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B78DD0F-5011-4728-96CE-38FE2428DF55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A36979E6-B537-465C-B304-07AFCCB52945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36979E6-B537-465C-B304-07AFCCB52945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36979E6-B537-465C-B304-07AFCCB52945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36979E6-B537-465C-B304-07AFCCB52945}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
