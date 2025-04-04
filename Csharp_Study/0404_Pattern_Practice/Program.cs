@@ -63,13 +63,6 @@
         string animalsound;
         string animalfeed;
 
-        public Animal(string animalname, string animalmake, string animalsound, string animalfeed)
-        {
-            this.animalname = animalname;
-            this.animalmake = animalmake;
-            this.animalsound = animalsound;
-            this.animalfeed = animalfeed;
-        }
     }
 
 
