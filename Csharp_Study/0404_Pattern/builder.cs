@@ -8,5 +8,6 @@ namespace _0404_Pattern
 {
     class builder
     {
+
     }
 }
