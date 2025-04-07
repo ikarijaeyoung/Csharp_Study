@@ -47,13 +47,14 @@
 
 
             AnimalBuilder chickenBuilder = new();
-            chickenBuilder.SetName("닭").SetSound("꼬끼오").SetMake("달걀").SetFeed("연한 상추");
+            chickenBuilder.SetName("닭").SetSound("꼬끼오").SetMake("달걀", "황금 알").SetFeed("연한 상추");
             AnimalBuilder sheepBuilder = new();
-            sheepBuilder.SetName("양").SetSound("메에-").SetMake("양고기").SetFeed("알팔파");
+            sheepBuilder.SetName("양").SetSound("메에-").SetMake("양고기", "슈퍼 양털").SetFeed("알팔파");
             AnimalBuilder cowBuilder = new();
-            cowBuilder.SetName("소").SetSound("음머-").SetMake("우유").SetFeed("옥수수");
+            cowBuilder.SetName("소").SetSound("음머-").SetMake("우유", "소 뿔").SetFeed("옥수수");
 
-            // Animal chicken = AnimalBuilder.Build();
+            // 만들어진걸 어떻게 출력해서 확인해보지?
+            Animal chicken = chickenBuilder.Build();
             Console.WriteLine($"동물 이름 : ");
         }
     }
@@ -84,24 +85,26 @@
             return weapon;
         }
 
-        public static void Gotcha()
+        public static Weapon Gotcha() // 확률적으로 좋은 무기가 나오는 확률 시스템을 만들어보고싶음.
         {
             Weapon weapon;
             Random random = new();
             int ranNum = random.Next(0, 100);
 
-            if (ranNum < 80)
+            if (ranNum < 70)
             {
                 weapon = new Weapon("나무 창", 5, 5f);
             }
-            else if (ranNum >= 80)
+            else if (ranNum < 90)
             {
                 weapon = new Weapon("철 검", 12, 2.7f);
             }
-            else if (ranNum >= 90)
+            else
             {
                 weapon = new Weapon("쇠 도끼", 20, 2.4f);
             }
+
+            return weapon;
         }
     }
 
@@ -126,31 +129,42 @@
         public string animalSound;
         public string animalFeed;
 
-        // public Animal Build() // 여기서 막힘
-        // {
-        //     Animal animal = new();
-        //     animal._animalName = animalName;
-        //     animal._animalMake = animalMake;
-        //     animal._animalSound = animalSound;
-        //     animal._animalFeed = animalFeed;
-        // }
+        public Animal Build() // 여기서 막힘
+        {
+            Animal animal = new();
+            animal._animalName = animalName;
+            animal._animalMake = animalMake;
+            animal._animalSound = animalSound;
+            animal._animalFeed = animalFeed;
 
-        // public AnimalBuilder() // 이거 왜 있지?
-        // {
-        //     animalName = "동물이름";
-        //     animalMake = "생산품";
-        //     animalSound = "울음소리";
-        //     animalFeed = "사료종류";
-        // }
+            return animal;
+        }
+
+        public AnimalBuilder() // 이거 왜 있지?
+        {
+            animalName = "동물이름";
+            animalMake = "생산품";
+            animalSound = "울음소리";
+            animalFeed = "사료종류";
+        }
 
         public AnimalBuilder SetName(string animalName)
         {
             this.animalName = animalName;
             return this;
         }
-        public AnimalBuilder SetMake(string animalMake)
+        public AnimalBuilder SetMake(string animalMake, string special)
         {
-            this.animalMake = animalMake;
+            Random random = new();
+            int ranNum = random.Next(0, 2); // 확인용으로 일단 반반으로 만듦
+            if (ranNum < 1)
+            {
+                this.animalMake = animalMake;
+            }
+            else if (ranNum >= 1)
+            {
+                this.animalMake = special;
+            }
             return this;
         }
         public AnimalBuilder SetSound(string animalSound)
